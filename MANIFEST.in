@@ -1,0 +1,18 @@
+include MANIFEST.in
+include requirements.txt
+include *.json
+include *.md
+include *.py
+include *.txt
+recursive-include jctkorp_express *.css
+recursive-include jctkorp_express *.csv
+recursive-include jctkorp_express *.html
+recursive-include jctkorp_express *.ico
+recursive-include jctkorp_express *.js
+recursive-include jctkorp_express *.json
+recursive-include jctkorp_express *.md
+recursive-include jctkorp_express *.png
+recursive-include jctkorp_express *.py
+recursive-include jctkorp_express *.svg
+recursive-include jctkorp_express *.txt
+recursive-exclude jctkorp_express *.pyc
