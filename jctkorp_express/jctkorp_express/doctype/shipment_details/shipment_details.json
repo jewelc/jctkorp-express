@@ -1,0 +1,298 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "autoname": "JCT-SHIPS- .######",
+ "creation": "2023-07-04 22:10:51.346448",
+ "default_view": "List",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "shipment_details",
+  "section_break_rdq8k",
+  "shipment_type",
+  "column_break_lhiav",
+  "shipment_option",
+  "column_break_3wjwn",
+  "payment_method",
+  "section_break_n1skg",
+  "shipment_unit",
+  "column_break_55ws4",
+  "unit_nos",
+  "column_break_y33qu",
+  "weight_per_unit",
+  "section_break_6y25v",
+  "shipment_dimensions",
+  "section_break_xjgi2",
+  "length_cm",
+  "column_break_eyd07",
+  "width_cm",
+  "column_break_et6gu",
+  "height_cm",
+  "section_break_mmw83",
+  "shipment_summary",
+  "section_break_mrvjb",
+  "units_nos",
+  "column_break_f3z3r",
+  "total_weight_kg",
+  "column_break_jln8h",
+  "total_cbm",
+  "section_break_kgtj0",
+  "shipment_description",
+  "route",
+  "published"
+ ],
+ "fields": [
+  {
+   "fieldname": "shipment_details",
+   "fieldtype": "Heading",
+   "label": "Shipment Details"
+  },
+  {
+   "fieldname": "section_break_rdq8k",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "shipment_type",
+   "fieldtype": "Select",
+   "in_list_view": 1,
+   "label": "Shipment Type",
+   "options": "\nInternational Express\nDocument Express\nParcel Express",
+   "reqd": 1
+  },
+  {
+   "fieldname": "column_break_lhiav",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "shipment_option",
+   "fieldtype": "Select",
+   "in_list_view": 1,
+   "label": "Shipment Option",
+   "options": "\nPick Up\nDrop Off",
+   "reqd": 1
+  },
+  {
+   "fieldname": "column_break_3wjwn",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "payment_method",
+   "fieldtype": "Select",
+   "in_list_view": 1,
+   "label": "Payment Method",
+   "options": "\nCash Payment\nOnline Payment\nCredit Payment",
+   "reqd": 1
+  },
+  {
+   "fieldname": "section_break_n1skg",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "shipment_unit",
+   "fieldtype": "Select",
+   "in_list_view": 1,
+   "label": "Shipment Unit",
+   "options": "\nBox\nBag\nEnvelope",
+   "reqd": 1
+  },
+  {
+   "fieldname": "column_break_55ws4",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "unit_nos",
+   "fieldtype": "Int",
+   "label": "Unit Nos",
+   "non_negative": 1,
+   "reqd": 1
+  },
+  {
+   "fieldname": "column_break_y33qu",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "weight_per_unit",
+   "fieldtype": "Float",
+   "label": "Weight Per Unit",
+   "non_negative": 1,
+   "reqd": 1
+  },
+  {
+   "fieldname": "section_break_6y25v",
+   "fieldtype": "Section Break"
+  },
+  {
+   "depends_on": "eval:doc.shipment_unit==\"Box\" || doc.shipment_unit==\"Bag\"",
+   "fieldname": "shipment_dimensions",
+   "fieldtype": "Heading",
+   "label": "Shipment Dimensions"
+  },
+  {
+   "fieldname": "section_break_xjgi2",
+   "fieldtype": "Section Break"
+  },
+  {
+   "depends_on": "eval:doc.shipment_unit==\"Box\" || doc.shipment_unit==\"Bag\"",
+   "fieldname": "length_cm",
+   "fieldtype": "Float",
+   "label": "Length (cm)",
+   "mandatory_depends_on": "eval:doc.shipment_unit==\"Box\" || doc.shipment_unit==\"Bag\"",
+   "non_negative": 1
+  },
+  {
+   "fieldname": "column_break_eyd07",
+   "fieldtype": "Column Break"
+  },
+  {
+   "depends_on": "eval:doc.shipment_unit==\"Box\" || doc.shipment_unit==\"Bag\"",
+   "fieldname": "width_cm",
+   "fieldtype": "Float",
+   "label": "Width (cm)",
+   "mandatory_depends_on": "eval:doc.shipment_unit==\"Box\" || doc.shipment_unit==\"Bag\"",
+   "non_negative": 1
+  },
+  {
+   "fieldname": "column_break_et6gu",
+   "fieldtype": "Column Break"
+  },
+  {
+   "depends_on": "eval:doc.shipment_unit==\"Box\" || doc.shipment_unit==\"Bag\"",
+   "fieldname": "height_cm",
+   "fieldtype": "Float",
+   "label": "Height (cm)",
+   "mandatory_depends_on": "eval:doc.shipment_unit==\"Box\" || doc.shipment_unit==\"Bag\"",
+   "non_negative": 1
+  },
+  {
+   "fieldname": "section_break_mmw83",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "shipment_summary",
+   "fieldtype": "Heading",
+   "label": "Shipment Summary"
+  },
+  {
+   "fieldname": "section_break_mrvjb",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "column_break_f3z3r",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "total_weight_kg",
+   "fieldtype": "Float",
+   "label": "Total Weight (Kg)"
+  },
+  {
+   "fieldname": "column_break_jln8h",
+   "fieldtype": "Column Break"
+  },
+  {
+   "depends_on": "eval:doc.shipment_unit==\"Box\" || doc.shipment_unit==\"Bag\"",
+   "fieldname": "total_cbm",
+   "fieldtype": "Float",
+   "label": "Total CBM",
+   "mandatory_depends_on": "eval:doc.shipment_unit==\"Box\" || doc.shipment_unit==\"Bag\"",
+   "non_negative": 1
+  },
+  {
+   "fieldname": "section_break_kgtj0",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "shipment_description",
+   "fieldtype": "Small Text",
+   "label": "Shipment Description"
+  },
+  {
+   "fieldname": "route",
+   "fieldtype": "Data",
+   "label": "Route"
+  },
+  {
+   "default": "0",
+   "fieldname": "published",
+   "fieldtype": "Check",
+   "label": "Published"
+  },
+  {
+   "fieldname": "units_nos",
+   "fieldtype": "Data",
+   "label": "Total Units"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2023-07-06 23:45:20.981693",
+ "modified_by": "Administrator",
+ "module": "Jctkorp Express",
+ "name": "Shipment Details",
+ "naming_rule": "Expression (old style)",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  },
+  {
+   "create": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Customer",
+   "share": 1,
+   "write": 1
+  },
+  {
+   "create": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Sales User",
+   "share": 1,
+   "write": 1
+  },
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Sales Manager",
+   "share": 1,
+   "write": 1
+  },
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Sales Master Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}
