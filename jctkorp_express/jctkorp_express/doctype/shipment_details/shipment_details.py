@@ -20,8 +20,15 @@ class ShipmentDetails(Document):
 			if (((self.length_cm ==0) and (self.width_cm ==0) and (self.height_cm ==0) and (self.total_cbm ==0)) or ((self.length_cm ==0) or (self.width_cm==0) or (self.height_cm==0) or (self.total_cbm ==0))):
 				frappe.throw("Lenght/Width/Height/Total CBM value Must be greater than 0")
 
-	def before_save(self):
-		self.total_units = self.unit_nos
+
+	def save_form_data(self):
+		new_doc = frappe.new_doc(ShipmentDetails)
+		new_doc.shipment_type = doc.get("shipment_type")
+		new_doc.shipment_option = doc.get("shipment_option")
+
+
+	# def before_save(self):
+	# 	self.total_units = self.unit_nos
 		
 	# 	self.set_value()
 
